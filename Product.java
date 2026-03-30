@@ -1,28 +1,38 @@
+import java.util.HashMap;
+
 public class Product {
-    private long id;
+    private long id = 1;
+    private static long counter = 0;
     private String title;
     private double price;
+    private HashMap<Integer, String> category;
 
-    Product1(long i,String t,double p){
-        this.id = i;
-        this.title = t;
-        this.price = p; 
+    public Product(long id, String title, double price, HashMap<Integer, String> category) {
+        this.id += this.counter;
+        this.counter++;
+        
+        this.id = id;
+        this.title = title;
+        this.price = price;
+        this.category = category;
     }
 
-    public long getid(){
-        return this.id;
+    public Product() {
     }
-    public String gettitle(){
-        return this.title;
-    }
-    public double getprice(){
-        return this.price;
-    }
+
+    public long getId() { return this.id; }
+
+    public String getTitle() { return this.title; }
+
+    public double getPrice() { return this.price; }
+
+    public HashMap<Integer, String> getCategory() { return this.category; }
+
+    public void setId(long id) { this.id = id; }
+
+    public void setTitle(String title) { this.title = title; }
+
+    public void setPrice(double price) { this.price = price; }
     
-
+    public void setCategory(HashMap<Integer, String> category) { this.category = category; }
 }
-/*  инкапсуляция два обекта в меин 2 добавить обстракт продукт добавить поле категория 
-хещ меп ключ значением будет являться навание категории
- создеть новый обычный класс он будет иметь название электро он должен наследоваться от класса продукт 
-дальше обрашаем внивмание мы айди должен быть автомотическим создать новый метод не обстрактный для авто выдачи айди (по порядку +1 от пред)
-абстракт метод на будуйшее для калькуляции цен 

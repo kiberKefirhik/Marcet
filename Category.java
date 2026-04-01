@@ -7,5 +7,8 @@ public abstract class Category extends Product {
 
     private Category listCategory;
 
-    private long idCounter = 1;
+    Category (){}
+    public void addcategory (String name, long idcat){
+        category.putAll(name,idcat);
+    }
 }

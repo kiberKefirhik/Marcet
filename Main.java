@@ -1,21 +1,21 @@
 public class Main {
     public static void main(String[] args) {
-        Product product1 = new Product();
 
-        System.out.println(product1.getTitle());
+        Category cars = new Category("Автомобили");
+        Category phones = new Category("Смартфоны");
 
-        System.out.println(product1.getPrice());
-        
-        System.out.println(product1.getId());
 
-        product1.setTitle("dsf");
-        product1.setPrice(8814);
-        product1.setId(1);
+        cars.addProduct(new Product("M", 250));
+        cars.addProduct(new Product("Audi", 290));
 
-        System.out.println(product1.getTitle());
-       
-        System.out.println(product1.getPrice());
-       
-        System.out.println(product1.getId());
+        phones.addProduct(new Product("Google Pixel 8", 70000));
+
+        cars.showProducts();
+        phones.showProducts();
+
+        System.out.println();
+        Catalog.showAll();
+
+        System.out.println(cars.geProduct(0).equals(cars.geProduct(1)));
     }
 }

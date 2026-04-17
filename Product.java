@@ -1,5 +1,7 @@
 import java.util.Objects;
 
+
+
 public class Product {
     private static long counter = 1; 
 
